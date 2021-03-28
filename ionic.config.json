@@ -1,0 +1,7 @@
+{
+  "name": "kfzOptimizerApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
