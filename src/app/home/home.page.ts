@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {DatabaseService}from '../database.service'
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private database:DatabaseService,private router:Router) {}
+
+  tryToLogin(email:string,password:string):void{
+    if(this.database.postLogin(email,password)){
+      this.router.navigate(['login']);
+    }
+   
+  }
 
 }
