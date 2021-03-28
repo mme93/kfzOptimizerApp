@@ -1,27 +1,42 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.toolbarStylee {
+    text-align: center;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.backGroundStylee {
+    color: white;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+h1 {
+    text-align: center;
 }
 
-#container a {
-  text-decoration: none;
+.textFieldStylee {
+    color: black;
+}
+
+.loginContentStylee {
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+.textFieldContent {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.loginButtonStylee {
+    margin-top: 5px;
+    padding: 10px 16px;
+    padding-top: 5px;
+    display: inline-block;
+    font-size: 16px;
 }
