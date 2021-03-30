@@ -13,10 +13,15 @@ export class HomePage {
   constructor(private database:DatabaseService,private router:Router) {}
 
   tryToLogin(email:string,password:string):void{
-    if(this.database.postLogin(email,password)){
-      this.router.navigate(['login']);
-    }
+    //this.database.test();
+    
+  
+    this.database.postLogin();
+     // this.router.navigate(['login']);
+    
    
   }
+ 
 
 }
+
