@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {DatabaseService}from '../database.service'
+import { UserIdentifaktionService } from '../webService/user-identifaktion.service';
 
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,18 +11,17 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private database:DatabaseService,private router:Router) {}
 
-  tryToLogin(email:string,password:string):void{
-    //this.database.test();
-    
-  
-    this.database.postLogin();
-     // this.router.navigate(['login']);
-    
-   
+  constructor(private router: Router, private userIdentService: UserIdentifaktionService) { }
+
+  tryToLogin(email: string, password: string): void {
+    this.userIdentService.checkLogin(email, password).then(response => {
+      if (response.login) {
+        this.router.navigate(['login']);
+      }
+    });
+
   }
- 
+
 
 }
-
