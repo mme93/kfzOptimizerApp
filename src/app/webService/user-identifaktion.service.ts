@@ -17,7 +17,7 @@ export class UserIdentifaktionService {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     }
     return new Promise((resolve, reject) => {
-      this.http.post<AnswerUserLogin>('http://localhost:8080/date', JSON.stringify(new UserLogin(emaiL,password)),httpOptions)
+      this.http.post<AnswerUserLogin>('https://kfzoptimizerservice.herokuapp.com/userIdentifaktion', JSON.stringify(new UserLogin(emaiL,password)),httpOptions)
         .subscribe(res => {
           resolve(res);
         }, (err) => {

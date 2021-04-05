@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { UserIdentifaktionService } from '../webService/user-identifaktion.service';
-
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +8,9 @@ import { Observable } from 'rxjs';
 export class HomePage {
 
 
-  constructor(private router: Router, private userIdentService: UserIdentifaktionService) { }
+  constructor() { }
 
-  tryToLogin(email: string, password: string): void {
-    this.userIdentService.checkLogin(email, password).then(response => {
-      if (response.login) {
-        this.router.navigate(['login']);
-      }
-    });
-
-  }
+ 
 
 
 }
