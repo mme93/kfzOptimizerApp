@@ -14,10 +14,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   tryToLogin(email: string, password: string): void {
-    this.userIdentService.checkLogin(email, password).then(response => {
-      if (response.login) {
-        this.router.navigate(['home']);
-      }
+    this.userIdentService.isLogin(email,password).subscribe(response=>{
+        if(response.login){
+          console.log(response.token)
+          localStorage.setItem("token",response.token);
+          this.router.navigate(['home']);
+        }
     });
 
   }

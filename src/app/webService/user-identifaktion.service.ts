@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs'
+import { LoginPageRoutingModule } from '../login/login-routing.module';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,17 @@ export class UserIdentifaktionService {
    
    }
 
-   checkLogin(emaiL:string,password:string):Promise<AnswerUserLogin> {
+  isLogin(emaiL:string,password:string):Observable<LoginToken> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     }
-    return new Promise((resolve, reject) => {
-      this.http.post<AnswerUserLogin>('https://kfzoptimizerservice.herokuapp.com/userIdentifaktion', JSON.stringify(new UserLogin(emaiL,password)),httpOptions)
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
-    });;
+    return this.http.post<LoginToken>('https://kfzoptimizerservice.herokuapp.com/userIdentifaktion', JSON.stringify(new UserLogin(emaiL,password)),httpOptions); 
   }
- 
+  logOut(toke:string){
+
+  }
 }
+  
 
 
 class UserLogin{
@@ -37,14 +34,13 @@ class UserLogin{
     this.password=password;
   }
 }
-class AnswerUserLogin{
-  email:string;
-  password:string;
+class LoginToken{
+  token:string;
   login:boolean;
-  constructor(email:string,password:string,login:boolean){
+  email:string;
+  constructor( token:string,login:boolean,email:string){
+    this.token=token;
     this.email=email;
-    this.password=password;
     this.login=login;
-  }
+    }
 }
-
