@@ -6,7 +6,6 @@ import {UserIdentifaktionService}from './webService/user-identifaktion.service';
 
 
 
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';

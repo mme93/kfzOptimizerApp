@@ -1,7 +1,6 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserIdentifaktionService } from '../webService/user-identifaktion.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +9,9 @@ import { UserIdentifaktionService } from '../webService/user-identifaktion.servi
 })
 export class HomePage{
 
-  constructor(private router:Router,private userIdentService: UserIdentifaktionService) { }
-  logOut():void{
-    const toke=localStorage.getItem("token");
-    localStorage.removeItem("token");
-    //this.userIdentService.logOut(stringify(toke));
-    //this.router.navigate(['/login']);
-  }  
+  constructor(private menu: MenuController,private router:Router) { 
+    this.menu.enable(true,'main-menu');
+  }
+
 
 }

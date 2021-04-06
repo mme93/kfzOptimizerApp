@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserIdentifaktionService } from '../webService/user-identifaktion.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import { UserIdentifaktionService } from '../webService/user-identifaktion.servi
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router, private userIdentService: UserIdentifaktionService) { }
+  constructor(private menu: MenuController,private router: Router, private userIdentService: UserIdentifaktionService) { 
+    this.menu.enable(false,'main-menu');
+  }
 
   ngOnInit() {
   }
