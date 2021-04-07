@@ -11,6 +11,7 @@ import { MenuController } from '@ionic/angular';
 export class AppComponent {
   constructor(private menu: MenuController, private router:Router,private userIdentService: UserIdentifaktionService) {}
   stringToken:string;
+  
   logOut():void{
     this.stringToken=localStorage.getItem("token");
     localStorage.removeItem("token");
@@ -19,6 +20,19 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }  
   goToAuftraege(){
+    this.menu.close();
     this.router.navigate(['/auftraege']);
+  }
+  goToHome(){
+    this.menu.close();
+    this.router.navigate(['/home']);
+  }
+  goToCar(){
+    this.menu.close();
+    this.router.navigate(['/car']);
+  }
+  goToCarService(){
+    this.menu.close();
+    this.router.navigate(['/carservice']);
   }
 }

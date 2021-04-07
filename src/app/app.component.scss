@@ -1,3 +1,22 @@
 .titleStyle {
     text-align: center;
 }
+
+ion-menu {
+    --ion-background-color: #404040;
+    --ion-text-color: white;
+    ion-toolbar {
+        --background: #121212;
+    }
+    ion-list {
+        background: transparent;
+    }
+}
+
+ion-content {
+    --background: #404040;
+}
+
+.iconStyle {
+    color: white;
+}

@@ -9,7 +9,7 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  errormsg:string;
   constructor(private menu: MenuController,private router: Router, private userIdentService: UserIdentifaktionService) { 
     this.menu.enable(false,'main-menu');
   }
@@ -21,7 +21,10 @@ export class LoginPage implements OnInit {
         if(response.login){
           console.log(response.token)
           localStorage.setItem("token",response.token);
+          this.errormsg="";
           this.router.navigate(['home']);
+        }else{
+          this.errormsg="Error: Falscher Benutzernamen oder Passwort";
         }
     });
 

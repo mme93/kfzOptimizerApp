@@ -7,20 +7,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <div class="backGroundStylee">
-        <h1> Bitte geben Sie Ihre Benutzername einen</h1>
-    </div>
-    <div class="loginContentStylee">
-        <div class="textFieldContent">
-            <label>Email</label>
-            <input #email type="text" class="textFieldStylee" placeholder="Deine Email-Adresse eingeben">
+    <div class="contentStyle">
+        <div class="backGroundStylee">
+            <h1> Bitte geben Sie Ihre Benutzernamen einen</h1>
         </div>
-        <div class="textFieldContent">
-            <label>Passwort</label>
-            <input #loginPassWord type="password" class="textFieldStylee" placeholder="Passwort eingeben">
+        <div class="errorStyle">
+            {{errormsg}}
         </div>
-        <div>
-            <ion-button (click)="tryToLogin(email.value,loginPassWord.value)" class=" loginButtonStylee ">Login</ion-button>
+        <div class="loginContentStylee">
+            <div class="textFieldContent">
+                <label>Email</label>
+                <input #email type="text" placeholder="Deine Email-Adresse eingeben">
+            </div>
+            <div class="textFieldContent">
+                <label>Passwort</label>
+                <input #loginPassWord type="password" laceholder="Passwort eingeben">
+            </div>
+            <div>
+                <ion-button (click)=" tryToLogin(email.value,loginPassWord.value) " class=" loginButtonStylee ">Login</ion-button>
+            </div>
         </div>
     </div>
 

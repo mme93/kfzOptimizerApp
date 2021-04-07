@@ -1,3 +1,17 @@
 .titleStyle {
     text-align: center;
+    color: white;
+    padding-top: 5px;
+}
+
+.menuButtonStyle {
+    color: white;
+}
+
+ion-toolbar {
+    --background: #121212;
+}
+
+ion-content {
+    --background: #404040;
 }
