@@ -35,4 +35,8 @@ export class AppComponent {
     this.menu.close();
     this.router.navigate(['/carservice']);
   }
+  goToKunde(){
+    this.menu.close();
+    this.router.navigate(['/kunde']);
+  }
 }

@@ -15,3 +15,54 @@ ion-toolbar {
 ion-content {
     --background: #404040;
 }
+
+.fieldStyle {
+    text-align: center;
+    border: solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 10px;
+}
+
+.rowDesing {
+    text-align: left;
+}
+
+.listContent {
+    background-color: #404040;
+}
+
+summary {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+ion-item {
+    --ion-background-color: #404040;
+}
+
+ion-input {
+    --placeholder-color: white;
+    color: white;
+}
+
+ion-label {
+    min-width: 50%;
+    max-width: 50%;
+}
+
+ion-button {
+    --color: white;
+    --background: black;
+    margin-left: 10px;
+}
+
+ion-searchbar {
+    --color: white;
+    --background: #505050;
+}
+
+.resultStyle {
+    visibility: hidden;
+}

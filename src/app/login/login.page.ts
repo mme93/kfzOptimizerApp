@@ -15,12 +15,15 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    
   }
   tryToLogin(email: string, password: string): void {
-    this.userIdentService.isLogin(email,password).subscribe(response=>{
-        if(response.login){
-          console.log(response.token)
-          localStorage.setItem("token",response.token);
+
+    this.userIdentService.tryLogin(email,password).subscribe(response=>{
+      console.log(response.jwtToken)
+        if(response.jwtToken!="Bad credentials"){
+          console.log(response.jwtToken)
+          localStorage.setItem("token",response.jwtToken);
           this.errormsg="";
           this.router.navigate(['home']);
         }else{
@@ -28,5 +31,9 @@ export class LoginPage implements OnInit {
         }
     });
 
+   
+
+
   }
+  
 }

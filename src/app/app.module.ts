@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {UserIdentifaktionService}from './webService/user-identifaktion.service';
+import { CaradminastrionService } from './webService/caradminastrion.service';
 
 
 
@@ -15,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },UserIdentifaktionService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },UserIdentifaktionService,CaradminastrionService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

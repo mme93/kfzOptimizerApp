@@ -2,7 +2,7 @@
     <ion-toolbar>
         <div>
             <ion-title class="titleStyle">
-                Home
+                Kunde
             </ion-title>
         </div>
         <div>
@@ -14,5 +14,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-button (click)="testme()">Klicke me</ion-button>
+
+    <ion-list class="au-form" inset padding class="itemContent">
+        <div class="headerStyle">
+            <h1>Kundennummer eingeben</h1>
+        </div>
+        <ion-item>
+            <ion-input type="text" placeholder="Kundennummer"></ion-input>
+            <button (click)="searchConsumer()">Suchen</button>
+        </ion-item>
+    </ion-list>
+
 </ion-content>

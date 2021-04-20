@@ -14,5 +14,74 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+    <div class="fieldStyle">
+        <details>
+            <summary>Neus Fahrzeug anlegen</summary>
+            <div>
+                <ion-item>
+                    <ion-label color="light">TÜV: </ion-label>
+                    <ion-input #tuev type="date"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="light">Kennzeichen: </ion-label>
+                    <ion-input #kennzeichen type="text" placeholder="Kennzeichen des Fahrzeuges Bsp: MH-XX-9999"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="light ">Halter: </ion-label>
+                    <ion-input #halter type="text" placeholder="Name des Besitzers"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="light ">FIN: </ion-label>
+                    <ion-input #fin type="text" placeholder="Bitte die FIN eingeben"></ion-input>
+                </ion-item>
+                <div>
+                    <ion-button (click)="postCar(tuev.value,kennzeichen.value,halter.value,fin.value) ">Anlegen</ion-button>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div class="fieldStyle ">
+        <details>
+            <summary> Vorhande Fahrzeuge bearbeiten/löschen</summary>
+            <ion-item>
+                <ion-label color="light">Kennzeichen: </ion-label>
+                <ion-input #searchKennzeichen type="text" placeholder="Bitte geben Sie das Kennzeichen mit dem Muster: MH-AW-419"></ion-input>
+                <ion-button (click)="loadCar(searchKennzeichen.value)">Suchen</ion-button>
+            </ion-item>
+            <div class="resultStyle" id="resultID">
+                <ion-item>
+                    <ion-label color="light">TÜV: </ion-label>
+                    <ion-input #updatetuev type="date"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="light">Kennzeichen: </ion-label>
+                    <ion-input #updatekennzeichen type="text" placeholder="Kennzeichen des Fahrzeuges Bsp: MH-XX-9999"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="light ">Halter: </ion-label>
+                    <ion-input #updatehalter type="text" placeholder="Name des Besitzers"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="light ">FIN: </ion-label>
+                    <ion-input #updatefin type="text" placeholder="Bitte die FIN eingeben"></ion-input>
+                </ion-item>
+                <div>
+                    <ion-button (click)="updateCar(updatekennzeichen.value)">Speichern</ion-button>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div class="fieldStyle ">
+        <details>
+            <summary>Fahrzeug suchen</summary>
+            <ion-searchbar #search debounce="500" (ionChange)="_ionChange($event) "></ion-searchbar>
+            <ion-list class="listContent ">
+                <ion-item *ngFor="let item of searchedItem ">
+                    <ion-label>{{item.title}}</ion-label>
+                    <ion-button>Bearbeiten</ion-button>
+                    <ion-button>Löschen</ion-button>
+                </ion-item>
+            </ion-list>
+        </details>
+    </div>
 </ion-content>

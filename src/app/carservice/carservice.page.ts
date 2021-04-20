@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {KfzServiceService} from '../webService/kfz-service.service'
 
 @Component({
   selector: 'app-carservice',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarservicePage implements OnInit {
 
-  constructor() { }
+  constructor(private kfzService:KfzServiceService) { }
 
   ngOnInit() {
+    this.kfzService.loadServices();
   }
 
 }
