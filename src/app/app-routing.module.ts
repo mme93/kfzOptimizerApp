@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'kunde',
     loadChildren: () => import('./kunde/kunde.module').then( m => m.KundePageModule)
   },
+  {
+    path: 'calender',
+    loadChildren: () => import('./util/calender/calender.module').then( m => m.CalenderPageModule)
+  },
+  {
+    path: 'create-date',
+    loadChildren: () => import('./util/create-date/create-date.module').then( m => m.CreateDatePageModule)
+  },
 ];
 
 @NgModule({

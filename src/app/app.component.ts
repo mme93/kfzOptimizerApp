@@ -39,4 +39,8 @@ export class AppComponent {
     this.menu.close();
     this.router.navigate(['/kunde']);
   }
+  goToCalender(){
+    this.menu.close();
+    this.router.navigate(['/calender']);
+  }
 }

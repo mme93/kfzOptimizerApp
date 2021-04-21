@@ -1,0 +1,40 @@
+    .titleStyle {
+        text-align: center;
+    }
+    
+    ion-title {
+        color: white;
+    }
+    
+    ion-toolbar {
+        --background: #404040;
+    }
+    
+    ion-content {
+        --background: #404040;
+    }
+    
+    ion-label {
+        min-width: 50%;
+        max-width: 50%;
+    }
+    
+    ion-item {
+        --ion-background-color: #404040;
+    }
+    
+    .buttonStyle {
+        text-align: center;
+    }
+    
+    .borderStyle {
+        border-radius: 8px;
+        border-style: solid;
+        border-color: black;
+        border-width: medium;
+    }
+    
+    .contentStyle {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
